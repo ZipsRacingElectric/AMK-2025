@@ -1,0 +1,29 @@
+Send Message 1 – Motor Feedback (Offset 0x004)
+	Status word (UNS16)	(Special Signal 3)
+	Actual torque value (SGN16) (Special Signal 19)
+	Actual speed value (SGN32) (Special Signal 20)
+
+Send Message 2 – Power Consumption (Offset 0x008)
+	DC bus voltage (UNS16) (SERCOS Signal 32836)
+	Torque current feedback (SGN16) (SERCOS Signal 32834)
+	Actual power value (UNS32) (SERCOS Signal 33100)
+
+Send Message 3 – Temperatures (Offset 0x300)
+	Temperature internal (SGN16) (SERCOS Signal 33116)
+	Temperature external (SGN16) (SERCOS Signal 33117)
+	Temperature sensor motor (UNS16) (SERCOS Signal 34166)
+	IGBT Temperature (SGN16) (Special Signal 27)
+
+Send Message 4 – Errors 1 (Offset 0x304)
+	Diagnostic number (UNS32) (Special Signal 21)
+	Error info 1 (UNS32) (Special Signal 22)
+
+Send Message 5 – Errors 2 (Offset 0x308)
+	Error info 2 (UNS32) (Special Signal 23)
+	Error info 3 (UNS32) (Special Signal 24)
+
+Recieve Message 1 – Motor Request (Offset 0x000)
+	Control word (UNS16) (Special Signal 4)
+	Torque setpoint (SGN16) (Special Signal 17)
+	Positive torque limit (SGN16) (Special Signal 13)
+	Negative torque limit (SGN16) (Special Signal 14)
