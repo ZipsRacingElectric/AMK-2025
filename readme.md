@@ -13,23 +13,23 @@ Each inverter uses the same CAN configuration, but with different message messag
 
 ## CAN Configuration
 
-| Message           | Message Name      | ID Offset | Signal Name              | Datatype | Type    | Index | Bytes  |
-|-------------------|-------------------|-----------|--------------------------|----------|---------|-------|--------|
-| Send Message 1    | Motor Feedback    | 0x004     | Status word              | UNS16    | Special | 3     | [0, 1] |
-|                   |                   |           | Actual torque value      | SGN16    | Special | 19    | [2, 3] |
-|                   |                   |           | Actual speed value       | SGN32    | Special | 20    | [4, 7] |
-| Send Message 2    | Power Consumption | 0x008     | DC bus voltage           | UNS16    | SERCOS  | 32836 | [0, 1] |
-|                   |                   |           | Torque current feedback  | SGN16    | SERCOS  | 32834 | [2, 3] |
-|                   |                   |           | Actual power value       | UNS32    | SERCOS  | 33100 | [4, 7] |
-| Send Message 3    | Temperatures      | 0x300     | Temperature internal     | SGN16    | SERCOS  | 33116 | [0, 1] |
-|                   |                   |           | Temperature external     | SGN16    | SERCOS  | 33117 | [2, 3] |
-|                   |                   |           | Temperature sensor motor | UNS16    | SERCOS  | 34166 | [4, 5] |
-|                   |                   |           | IGBT temperature         | SGN16    | Special | 27    | [6, 7] |
-| Send Message 4    | Errors 1          | 0x304     | Diagnostic number        | UNS32    | Special | 21    | [0, 3] |
-|                   |                   |           | Error info 1             | UNS32    | Special | 22    | [4, 7] |
-| Send Message 5    | Errors 2          | 0x308     | Error info 2             | UNS32    | Special | 23    | [0, 3] |
-|                   |                   |           | Error info 3             | UNS32    | Special | 24    | [4, 7] |
-| Receive Message 1 | Motor Request     | 0x000     | Control word             | UNS16    | Special | 4     | [0, 1] |
-|                   |                   |           | Torque setpoint          | SGN16    | Special | 17    | [2, 3] |
-|                   |                   |           | Positive torque limit    | SGN16    | Special | 13    | [4, 5] |
-|                   |                   |           | Negative torque limit    | SGN16    | Special | 14    | [6, 7] |
+| Message           | Message Name      | ID Offset | Frequency | Signal Name              | Datatype | Type    | Index | Bytes  |
+|-------------------|-------------------|-----------|-----------|--------------------------|----------|---------|-------|--------|
+| Send Message 1    | Motor Feedback    | 0x004     | 200 Hz    | Status word              | UNS16    | Special | 3     | [0, 1] |
+|                   |                   |           |           | Actual torque value      | SGN16    | Special | 19    | [2, 3] |
+|                   |                   |           |           | Actual speed value       | SGN32    | Special | 20    | [4, 7] |
+| Send Message 2    | Power Consumption | 0x008     | 200 Hz    | DC bus voltage           | UNS16    | SERCOS  | 32836 | [0, 1] |
+|                   |                   |           |           | Torque current feedback  | SGN16    | SERCOS  | 32834 | [2, 3] |
+|                   |                   |           |           | Actual power value       | UNS32    | SERCOS  | 33100 | [4, 7] |
+| Send Message 3    | Temperatures      | 0x300     | 10 Hz     | Temperature internal     | SGN16    | SERCOS  | 33116 | [0, 1] |
+|                   |                   |           |           | Temperature external     | SGN16    | SERCOS  | 33117 | [2, 3] |
+|                   |                   |           |           | Temperature sensor motor | UNS16    | SERCOS  | 34166 | [4, 5] |
+|                   |                   |           |           | IGBT temperature         | SGN16    | Special | 27    | [6, 7] |
+| Send Message 4    | Errors 1          | 0x304     | 10 Hz     | Diagnostic number        | UNS32    | Special | 21    | [0, 3] |
+|                   |                   |           |           | Error info 1             | UNS32    | Special | 22    | [4, 7] |
+| Send Message 5    | Errors 2          | 0x308     | 10 Hz     | Error info 2             | UNS32    | Special | 23    | [0, 3] |
+|                   |                   |           |           | Error info 3             | UNS32    | Special | 24    | [4, 7] |
+| Receive Message 1 | Motor Request     | 0x000     | 200 Hz    | Control word             | UNS16    | Special | 4     | [0, 1] |
+|                   |                   |           |           | Torque setpoint          | SGN16    | Special | 17    | [2, 3] |
+|                   |                   |           |           | Positive torque limit    | SGN16    | Special | 13    | [4, 5] |
+|                   |                   |           |           | Negative torque limit    | SGN16    | Special | 14    | [6, 7] |
